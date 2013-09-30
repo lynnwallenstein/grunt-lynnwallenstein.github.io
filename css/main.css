@@ -422,11 +422,7 @@ table {
   border-spacing: 0;
 }
 
-@import url(../_bower_components/keanu/keanu.css);
-
-@import url(../_bower_components/normalize-css/normalize.css);
-
-@import url(../../fonts/social-circle/ss-social-circle.css);
+@import url(/fonts/social-circle/ss-social-circle.css);
 
 #page-header:after,
 #page-header:before {
@@ -788,3 +784,5 @@ body {
     page-break-after: avoid;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
