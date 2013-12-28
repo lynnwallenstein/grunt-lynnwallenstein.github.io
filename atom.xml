@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title></title>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2013-12-28T16:11:47-05:00</updated>
+ <id></id>
+ <author>
+   <name>Lynn Wallenstein</name>
+   <email>lynn@lynn.io</email>
+ </author>
+
+ 
+   <entry>
+     <title>jQuery GitHub Badge</title>
+     <link href="/css/webdev/opensource/2013/12/28/github-badge/"/>
+     <updated>2013-12-28T02:07:44-05:00</updated>
+     <id>/css/webdev/opensource/2013/12/28/github-badge</id>
+     <content type="html">&lt;p&gt;Just wanted to quickly post that I FINALLY got my jQuery GitHub badge updated and finally set up its own project page on GitHub. Demo, code and documentation can be found &lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;&lt;img src=&quot;/img/post-assets/2013-12-28/jQuery_GitHub_Badge.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are still tons of issues with it, mostly due to throttling from the API, but I got to finally mess around with sessionStorage, so it was a worthwhile endevour.&lt;/p&gt;
+</content>
+   </entry>
+ 
+   <entry>
+     <title>Nested Layouts with Less Divs</title>
+     <link href="/css/webdev/2013/12/22/nested-layouts-with-less-divs/"/>
+     <updated>2013-12-22T20:20:20-05:00</updated>
+     <id>/css/webdev/2013/12/22/nested-layouts-with-less-divs</id>
+     <content type="html">&lt;p&gt;First to start out, this method relies heavily on the use of the CSS &lt;a href=&quot;http://caniuse.com/calc&quot;&gt;Calc&lt;/a&gt; as a unit value. This is fairly well supported on most modern browsers, but if you need to support old versions of IE (pre 9), this probably won&amp;#39;t work for you.&lt;/p&gt;
+
+&lt;p&gt;Ok now that we got that out of the way...&lt;/p&gt;
+
+&lt;p&gt;A currently very popular design style is what I call &amp;quot;nested layouts&amp;quot;. By this I mean the page is broken up into sections where the content is in the center, but some attribute such as a border or background color stretches the total width of the page.&lt;/p&gt;
+
+&lt;h2&gt;The Example&lt;/h2&gt;
+
+&lt;p&gt;A great example of this is one of my favorite sites &lt;a href=&quot;http://www.github.com&quot;&gt;GitHub&lt;/a&gt; :)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post-assets/2013-12-22/github.png&quot; title=&quot;GitHub Dot Com, The Web Site&quot; class=&quot;colorbox&quot;&gt;
+  &lt;img src=&quot;/img/post-assets/2013-12-22/github.png&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;While the GitHub web site doesn&amp;#39;t actually use the code method I describe in this post, it is a good visual example of the design style:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post-assets/2013-12-22/github-annotation.png&quot; title=&quot;Page sections on GitHub with comment nest&quot; class=&quot;colorbox&quot;&gt;
+  &lt;img src=&quot;/img/post-assets/2013-12-22/github-annotation.png&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So in our example we have three content sections:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Header&lt;/li&gt;
+&lt;li&gt;Content&lt;/li&gt;
+&lt;li&gt;Footer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each of these have design attributes (background color/image) that stretch the whole width of the page, but the content is nested in the center of the page. To achieve this effect GitHub wraps each content section in an &lt;code&gt;div&lt;/code&gt; that it is full width and contains the design attributes (background color/image.)&lt;/p&gt;
+
+&lt;p&gt;For our example lets focus on just the content section with the black iconed image background. We have a wrapping div with the styles for the &lt;code&gt;background-image&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post-assets/2013-12-22/github-content-wrapper.png&quot; title=&quot;Content Wrapper&quot; class=&quot;colorbox&quot;&gt;
+  &lt;img src=&quot;/img/post-assets/2013-12-22/github-content-wrapper.png&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;and then another &lt;code&gt;div&lt;/code&gt; containing the content nested in the center using a fixed width with an auto margin, basicaly centering the content.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post-assets/2013-12-22/github-content.png&quot; title=&quot;Content&quot; class=&quot;colorbox&quot;&gt;
+  &lt;img src=&quot;/img/post-assets/2013-12-22/github-content.png&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Why is this Bad?&lt;/h2&gt;
+
+&lt;p&gt;Its not &amp;quot;bad&amp;quot;, it just adds a lot of extra unneccessary markup/divs which:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Increases complexity of page making it harder to work with/change/maintain&lt;/li&gt;
+&lt;li&gt;Makes it harder to use responsive CSS for responsive design&lt;/li&gt;
+&lt;li&gt;More code coming down the wire/larger page/performance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is a better way! ... IF you don&amp;#39;t have to worry about older browsers :)&lt;/p&gt;
+
+&lt;h2&gt;Calc All the Things!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/calc&quot;&gt;Calc&lt;/a&gt; is one of my favorite new things about CSS. If you haven&amp;#39;t played around with it, I highly recommend you do. Tt is immensely powerful and has enabled me to do so many amazing things without relying on absolute positioning and/or adding tons of extra markup.&lt;/p&gt;
+
+&lt;p&gt;The key is that calc allows the browser to use mixed units for units of measurements.  For some good examples of calc is use, there is a great &lt;a href=&quot;http://css-tricks.com/a-couple-of-use-cases-for-calc/&quot;&gt;CSSTricks&lt;/a&gt; article that goes over some common design patters and how calc can be used to achieve them.&lt;/p&gt;
+
+&lt;p&gt;So how can calc help us from &lt;a href=&quot;http://en.wiktionary.org/wiki/divitis&quot;&gt;Divitis&lt;/a&gt;? Easily!&lt;/p&gt;
+
+&lt;p&gt;So lets start by simplifying our markup a little bit:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;page-header&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;banner&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Here Is Our Header!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /header#page-header --&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Our Main &amp;quot;content&amp;quot; area.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /div#main --&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;footer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;page-footer&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  A footer... cause, why not.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/footer&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /footer#page-footer --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is pretty clean and simple and we don&amp;#39;t really want to add any more markup just for the sake of our design. Using calc we can dynamically add padding to the left and right so that the content is centered, but the design styles will apply to the whole block.&lt;/p&gt;
+
+&lt;p&gt;Lets take our &lt;code&gt;#main&lt;/code&gt; and style it with a black background with the content in a 1280px width nested in the center.&lt;/p&gt;
+
+&lt;h2&gt;The Math&lt;/h2&gt;
+
+&lt;p&gt;So the math here is we have the full page width (100%) and we need to take out a fixed pixel chunk for our content (1280px) and then the padding on either side is half of whatever is left ... 50% of that for the right, 50% for the left:&lt;/p&gt;
+
+&lt;p&gt;Each margin: &lt;code&gt;(100% - 1280px) / 2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We could do that with calc like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now remember, calc is pretty new, so probably to be safe you might want to add the browser vendor prefixes (or use something like a preprocessor such as &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; with mixins to take care of it :&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;webkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;webkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;See It in Action&lt;/h2&gt;
+
+&lt;p&gt;Using &lt;a href=&quot;http://codepen.io/lynnwallenstein/pen/HKdCz&quot;&gt;Codepen&lt;/a&gt;, I created a similar (yet even cleaner! Sass &amp;lt;3) version you can see in action:&lt;/p&gt;
+
+&lt;p data-height=&quot;420&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;HKdCz&quot; data-user=&quot;lynnwallenstein&quot; data-default-tab=&quot;result&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/lynnwallenstein/pen/HKdCz&#39;&gt;HKdCz&lt;/a&gt; by Lynn Wallenstein (&lt;a href=&#39;http://codepen.io/lynnwallenstein&#39;&gt;@lynnwallenstein&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;&lt;/p&gt;
+
+&lt;script async src=&quot;//codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;h2&gt;Thats It!&lt;/h2&gt;
+
+&lt;p&gt;Thats all it takes. Now I have a full width designed page, but centered content with beautiful semantic markup and no divitis!&lt;/p&gt;
+</content>
+   </entry>
+ 
+   <entry>
+     <title>Looking Back on 2013</title>
+     <link href="/blogging/update/2013/12/13/year-in-review/"/>
+     <updated>2013-12-13T09:40:06-05:00</updated>
+     <id>/blogging/update/2013/12/13/year-in-review</id>
+     <content type="html">&lt;p&gt;2013 was a pretty amazing year. It started out with me celebrating one year at &lt;a href=&quot;http://livingsocial.com/&quot;&gt;LivingSocial&lt;/a&gt; in  January. Working at LivingSocial was an amazing experience for me both personally and professionally. I met people there that I have learned so much from and some I have been fortunate enough to call my closest friends.&lt;/p&gt;
+
+&lt;p&gt;January was also an emotional whirlwind of happiness for others and sadness for me. A couple of my friends left the DC area to go move into new adventures in San Francisco and Berlin. It sort of broke up the band a little, but we used the powers of the internets to stay connected.&lt;/p&gt;
+
+&lt;p&gt;In March/April,  I left LivingSocial for a new opportunity at &lt;a href=&quot;http://github.com/&quot;&gt;GitHub&lt;/a&gt;. It is now December and I can&amp;#39;t imagine a more amazing work environment. I am surrounded with an awesome team working on a project that I love. There is really nothing more I could ask for in a work environment. GitHub being in San Francisco also opened up a opportunity for me to travel more so it was great that I got to see my SF friends.&lt;/p&gt;
+
+&lt;p&gt;My sister got remarried at the end of April and I was told to expect a new niece of newphew in January (not a shotgun wedding, but close!).&lt;/p&gt;
+
+&lt;p&gt;Mixed in the next couple of months was more sadness with friends taking off to San Francisco (AGAIN!), but I did get to see them. I spent some time in SF onboarding some new team members and got to hang out in our new office during GitHub summit which was the first time I got to meet a lot of my coworkers face to face. I spent the summer getting settled in at work and dealing with a lot of imposter syndrome and sadness that I was sort of alone in DC.&lt;/p&gt;
+
+&lt;p&gt;In October I went to the &lt;a href=&quot;http://gracehopper.org/&quot;&gt;Grace Hopper Women in Computing Conference&lt;/a&gt; with some of the other GitHub ladies. It is an amazing conferece, I expect to attend next year and suggest that everyone else does well... both women and men. October was a crazy busy month with hanging out in NYC for &lt;a href=&quot;https://brooklynbeta.org/2013&quot;&gt;Brooklyn Beta&lt;/a&gt; (which some tasty drinks here were my undoing for the year), &lt;a href=&quot;http://sassconf.com/&quot;&gt;SassConf&lt;/a&gt; and then heading to Ohio for a week of team hack housing. Wrapped up the month with the GitHub halloween party and support mini summit in SF, which has at this point become a second home.&lt;/p&gt;
+
+&lt;p&gt;November was pretty peaceful just hanging out in DC and taking a rest of the whirlwind that was October.&lt;/p&gt;
+
+&lt;p&gt;Now we are into December, my sister baby decided to make a pre-Christmas showing so I now have a newphew and am spending the rest of the year just hanging with my family and doing low key holiday stuff.&lt;/p&gt;
+
+&lt;p&gt;All in all, 2013 has been pretty great.&lt;/p&gt;
+
+&lt;p&gt;So whats next? Well DC has treated me pretty well, it is a great city, close to my family and I have a great apartment... but it is time for a change. In the next couple months I will be wrapping up things here and head to San Francisco. I am looking forward to having access to work in an office as well as hanging out with all my friends who headed west this year. I will miss the ease of seeing my family, but between quarterly trips home and google hangouts, I think the kids will see more of me then they want!&lt;/p&gt;
+
+&lt;p&gt;Happy holidays to everyone! &lt;a href=&quot;http://webstore.drinkmercy.com/&quot;&gt;Mercy up&lt;/a&gt; before the new year!&lt;/p&gt;
+</content>
+   </entry>
+ 
+   <entry>
+     <title>And We're Back...</title>
+     <link href="/blogging/update/2013/09/28/most-wonderful-time-of-the-year/"/>
+     <updated>2013-09-28T10:40:06-04:00</updated>
+     <id>/blogging/update/2013/09/28/most-wonderful-time-of-the-year</id>
+     <content type="html">&lt;p&gt;So, this is my yearly refresh of my website and the promise that I will blog more. I really do have good intentions, I just never feel qualified to write about
+anything.&lt;/p&gt;
+
+&lt;p&gt;I have a couple things left to work on the site:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Responsiveness ... it looks shit on mobile/smaller screens&lt;/li&gt;
+&lt;li&gt;Animating my svg character that Meghan Schofield did for me &amp;lt;3&lt;/li&gt;
+&lt;li&gt;Figuring out how how pagination is going to work/look... but I figured I might as well save that one until I get to a place where I need it ;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have moved away from wordpress to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and hosting this site now on &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, which is probably something I will write about at some point as I went through many iterations of how I wanted to do that and ended up with a pretty nice workflow using &lt;a href=&quot;http://yeoman.io&quot;&gt;Yeoman&lt;/a&gt;, &lt;a href=&quot;http://gruntjs.com/&quot;&gt;Grunt&lt;/a&gt; and &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt; for managing the building/optimization etc.&lt;/p&gt;
+</content>
+   </entry>
+ 
+
+</feed>
