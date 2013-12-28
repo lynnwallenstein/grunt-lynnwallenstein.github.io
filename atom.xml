@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2013-12-28T16:45:38-05:00</updated>
+ <updated>2013-12-28T18:53:58-05:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
@@ -14,9 +14,9 @@
  
    <entry>
      <title>jQuery GitHub Badge</title>
-     <link href="/css/webdev/opensource/2013/12/28/github-badge/"/>
+     <link href="/2013/12/28/github-badge/"/>
      <updated>2013-12-28T02:07:44-05:00</updated>
-     <id>/css/webdev/opensource/2013/12/28/github-badge</id>
+     <id>/2013/12/28/github-badge</id>
      <content type="html">&lt;p&gt;Just wanted to quickly post that I FINALLY got my jQuery GitHub badge updated and finally set up its own project page on GitHub. Demo, code and documentation can be found &lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;&lt;img src=&quot;/img/post-assets/2013-12-28/jQuery_GitHub_Badge.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -27,9 +27,9 @@
  
    <entry>
      <title>Nested Layouts with Less Divs</title>
-     <link href="/css/webdev/2013/12/22/nested-layouts-with-less-divs/"/>
+     <link href="/2013/12/22/nested-layouts-with-less-divs/"/>
      <updated>2013-12-22T20:20:20-05:00</updated>
-     <id>/css/webdev/2013/12/22/nested-layouts-with-less-divs</id>
+     <id>/2013/12/22/nested-layouts-with-less-divs</id>
      <content type="html">&lt;p&gt;First to start out, this method relies heavily on the use of the CSS &lt;a href=&quot;http://caniuse.com/calc&quot;&gt;Calc&lt;/a&gt; as a unit value. This is fairly well supported on most modern browsers, but if you need to support old versions of IE (pre 9), this probably won&amp;#39;t work for you.&lt;/p&gt;
 
 &lt;p&gt;Ok now that we got that out of the way...&lt;/p&gt;
@@ -149,9 +149,9 @@
  
    <entry>
      <title>Looking Back on 2013</title>
-     <link href="/blogging/update/2013/12/13/year-in-review/"/>
+     <link href="/2013/12/13/year-in-review/"/>
      <updated>2013-12-13T09:40:06-05:00</updated>
-     <id>/blogging/update/2013/12/13/year-in-review</id>
+     <id>/2013/12/13/year-in-review</id>
      <content type="html">&lt;p&gt;2013 was a pretty amazing year. It started out with me celebrating one year at &lt;a href=&quot;http://livingsocial.com/&quot;&gt;LivingSocial&lt;/a&gt; in  January. Working at LivingSocial was an amazing experience for me both personally and professionally. I met people there that I have learned so much from and some I have been fortunate enough to call my closest friends.&lt;/p&gt;
 
 &lt;p&gt;January was also an emotional whirlwind of happiness for others and sadness for me. A couple of my friends left the DC area to go move into new adventures in San Francisco and Berlin. It sort of broke up the band a little, but we used the powers of the internets to stay connected.&lt;/p&gt;
@@ -178,9 +178,9 @@
  
    <entry>
      <title>And We're Back...</title>
-     <link href="/blogging/update/2013/09/28/most-wonderful-time-of-the-year/"/>
+     <link href="/2013/09/28/most-wonderful-time-of-the-year/"/>
      <updated>2013-09-28T10:40:06-04:00</updated>
-     <id>/blogging/update/2013/09/28/most-wonderful-time-of-the-year</id>
+     <id>/2013/09/28/most-wonderful-time-of-the-year</id>
      <content type="html">&lt;p&gt;So, this is my yearly refresh of my website and the promise that I will blog more. I really do have good intentions, I just never feel qualified to write about
 anything.&lt;/p&gt;
 
