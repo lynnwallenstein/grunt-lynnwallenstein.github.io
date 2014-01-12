@@ -4,13 +4,32 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2014-01-12T04:04:57-05:00</updated>
+ <updated>2014-01-12T04:58:08-05:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
    <email>lynn@lynn.io</email>
  </author>
 
+ 
+   <entry>
+     <title>Auto Commenting of Partials</title>
+     <link href="/2014/01/11/commenting-partials/"/>
+     <updated>2014-01-11T23:16:07-05:00</updated>
+     <id>/2014/01/11/commenting-partials</id>
+     <content type="html">&lt;p&gt;When working in a rails app, sometimes it is really easy to loose yourself in a complex path of nested partials. Not knowing where code is coming from or where the proper place is to edit the source can be extremly frustrating and after my consistent bitching, my friend &lt;a href=&quot;http://twitter.com/comaddox&quot;&gt;Chris Maddox&lt;/a&gt; whipped up this really helpful code snippet that puts HTML comments outline the source of the view code:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/lynnwallenstein/f624bebff99c4035e75e.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Just copy this code into an intializer then, when in development mode, view your rendered HTML:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post-assets/2014-01-12/devtools.png&quot; title=&quot;Devtools&quot; class=&quot;colorbox&quot;&gt;
+  &lt;img src=&quot;/img/post-assets/2014-01-12/devtools.png&quot;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;BOOM. Now you can easily track what is coming form where. :wink:&lt;/p&gt;
+</content>
+   </entry>
  
    <entry>
      <title>jQuery GitHub Badge</title>
