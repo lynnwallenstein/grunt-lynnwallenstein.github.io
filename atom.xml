@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2014-01-20T13:59:25-05:00</updated>
+ <updated>2014-01-20T14:12:23-05:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
@@ -13,24 +13,11 @@
 
  
    <entry>
-     <title>Colors Matter</title>
+     <title>Keeping Your SCSS Vars and Adobe Palletes in Sync with Tinge</title>
      <link href="/2014/01/19/colors-matter/"/>
-     <updated>2014-01-19T00:00:00-05:00</updated>
+     <updated>2014-01-19T23:35:08-05:00</updated>
      <id>/2014/01/19/colors-matter</id>
-     <content type="html">&lt;hr&gt;
-
-&lt;p&gt;layout: post
-title: &amp;quot;Keeping Your SCSS Vars and Adobe Palletes in Sync with Tinge&amp;quot;
-date: 2014-01-19  23:35:08
-tags:
-- color
-- adobe
-- bruce
-- gem&lt;/p&gt;
-
-&lt;h2&gt;excerpt: Tinge creates Adobe Swatch Exchange (.ase) files from your sass variables.&lt;/h2&gt;
-
-&lt;p&gt;I am a fan of designing in code. I like the ability to really &amp;quot;kick the tires&amp;quot; of a design and feel how it will work from an interaction level.&lt;/p&gt;
+     <content type="html">&lt;p&gt;I am a fan of designing in code. I like the ability to really &amp;quot;kick the tires&amp;quot; of a design and feel how it will work from an interaction level.&lt;/p&gt;
 
 &lt;p&gt;Sometimes this isn&amp;#39;t possible.&lt;/p&gt;
 
