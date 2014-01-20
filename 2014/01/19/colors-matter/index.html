@@ -1,0 +1,114 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>Keeping Your SCSS Vars and Adobe Palletes in Sync with Tinge</title><meta name=description content=""><meta name=viewport content="width=device-width, initial-scale=1"><link rel=stylesheet href=/css/1e9b.main.css><script type=text/javascript src=//use.typekit.net/sck7umt.js></script><script type=text/javascript>try{Typekit.load();}catch(e){}</script></head><body class=preload><header id=page-header role=banner><a href=/><h1>Lynn.io</h1></a><ul class=social-links><li><a class="ss-icon ss-social-circle" href=http://www.github.com/lynnwallenstein target=github>GitHubOctocat</a></li><li><a class="ss-icon ss-social-circle" href=http://www.twitter.com/lynnwallenstein target=twitter>Twitter</a></li><li><a class="ss-icon ss-social-circle" href=http://www.dribbble.com/lynnwallenstein target=dribbble>Dribbble</a></li></ul></header><nav id=page-navigation><ol><li class=""><a href=/about/index.html>About</a></li><li class=""><a href=/>Posts</a></li></ol></nav><main id=page-main role=main><article class=post><header class=post-header><h1>Keeping Your SCSS Vars and Adobe Palletes in Sync with Tinge</h1></header><p>I am a fan of designing in code. I like the ability to really &quot;kick the tires&quot; of a design and feel how it will work from an interaction level.</p><p>Sometimes this isn&#39;t possible.</p><p>Sometimes it isn&#39;t me doing the design.</p><p>Sometimes I just feel Photoshoppy.</p><p>One of the many drawbacks between moving back and forth from Adobe to code is losing my color variables that I maintain in sass. I want to keep these colors in sass due do the power of of the sass color functions, but getting them outside of sass is a total PITA.</p><p>Now I could use a color picker or even just guestimate colors in Photoshop/Illustrator and replace them with color variables when the design finally gets codified, but that feels like a garbage solution to a technology problem.</p><p>Here enters <a href=https://github.com/bruce/tinge>Tinge</a>.</p><p>Tinge is a awesome gem created by my amazing friend <a href=http://bruce.io/>Bruce Williams</a> who after being sick and tired or my whining and complaining spent like 10 seconds (cause he is a genious) and created me this fabulous little tool that basically input my <code>_color.scss</code> SASS partials that I use in my projects and create for me an <a href=http://www.colourlovers.com/web/blog/2007/11/08/color-palettes-in-adobe-swatch-exchange-ase>Adobe Swatch Exchange</a> file that I could import into photoshop/illustrator with all my colors.</p><p>The key thing here is that Tinge computes my sass color variables using sass color functions like lighten, darken, desaturate, etc, so I get the full color palette. Tinge also can expert to JSON or YAML format instead of ASE.</p><h2>How Does It Work</h2><p>Its pretty simple. Lets take my example color file for this site:</p><div class=highlight><pre><code class="css language-css" data-lang=css><span class=o>//</span> <span class=nt>--------------------------</span>
+<span class=o>//</span>  <span class=nt>Colors</span>
+<span class=o>//</span> <span class=nt>--------------------------</span>
+
+<span class=err>$</span><span class=nt>black</span><span class=o>:</span> <span class=nf>#333332</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>white</span><span class=o>:</span> <span class=nf>#fff</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Grays</span>
+<span class=err>$</span><span class=nt>gray</span><span class=o>:</span> <span class=nf>#a29f99</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-light</span> <span class=o>:</span> <span class=nt>lighten</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>20</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-lighter</span><span class=o>:</span> <span class=nt>lighten</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>50</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-lightest</span><span class=o>:</span> <span class=nt>lighten</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>90</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-dark</span><span class=o>:</span> <span class=nt>darken</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>20</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-darker</span><span class=o>:</span> <span class=nt>darken</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>50</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-darkest</span><span class=o>:</span> <span class=nt>darken</span><span class=o>(</span><span class=err>$</span><span class=nt>gray</span><span class=o>,</span> <span class=nt>80</span><span class=o>%)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Transparent</span>
+<span class=err>$</span><span class=nt>transparent-white</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>100</span><span class=o>,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>0</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>transparent-black</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>0</span><span class=o>,</span><span class=nt>0</span><span class=o>%,</span><span class=nt>0</span><span class=o>%,</span><span class=nt>0</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=err>$</span><span class=nt>shadow-lightest</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>0</span><span class=o>,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=nc>.1</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>shadow-lighter</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>0</span><span class=o>,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=nc>.25</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>shadow-light</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>0</span><span class=o>,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=nc>.5</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>shadow</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>0</span><span class=o>,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=o>%,</span> <span class=nt>0</span><span class=nc>.75</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=err>$</span><span class=nt>glow-lightest</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>100</span><span class=o>,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>0</span><span class=nc>.1</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>glow-lighter</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>100</span><span class=o>,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>0</span><span class=nc>.25</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>glow-light</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>100</span><span class=o>,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>0</span><span class=nc>.5</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>glow</span><span class=o>:</span> <span class=nt>hsla</span><span class=o>(</span><span class=nt>100</span><span class=o>,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>100</span><span class=o>%,</span><span class=nt>0</span><span class=nc>.75</span><span class=o>)</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+
+<span class=o>//</span> <span class=nt>Better</span> <span class=nt>Default</span> <span class=nt>Colors</span> <span class=nt>-</span> <span class=nt>https</span> <span class=o>://</span><span class=nt>github</span><span class=nc>.com</span><span class=o>/</span><span class=nt>mrmrs</span><span class=o>/</span><span class=nt>colors</span>
+<span class=o>//</span> <span class=nt>--------------------------</span>
+
+<span class=err>$</span><span class=nt>aqua</span><span class=o>:</span> <span class=nf>#7FDBFF</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>blue</span><span class=o>:</span> <span class=nf>#0074D9</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>navy</span><span class=o>:</span> <span class=nf>#001F3F</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>teal</span><span class=o>:</span> <span class=nf>#39CCCC</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>green</span><span class=o>:</span> <span class=nf>#2ECC40</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>olive</span><span class=o>:</span> <span class=nf>#3D9970</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>lime</span><span class=o>:</span> <span class=nf>#01FF70</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Warm</span>
+<span class=err>$</span><span class=nt>yellow</span><span class=o>:</span> <span class=nf>#FFDC00</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>orange</span><span class=o>:</span> <span class=nf>#FF851B</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>red</span><span class=o>:</span> <span class=nf>#FF4136</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>fuchsia</span><span class=o>:</span> <span class=nf>#F012BE</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>purple</span><span class=o>:</span> <span class=nf>#B10DC9</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>maroon</span><span class=o>:</span> <span class=nf>#85144B</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Gray</span> <span class=nt>Scale</span>
+<span class=o>//</span><span class=err>$</span><span class=nt>white</span><span class=o>:</span> <span class=nf>#fff</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=o>//</span><span class=err>$</span><span class=nt>silver</span><span class=o>:</span> <span class=nf>#ddd</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=o>//</span><span class=err>$</span><span class=nt>gray</span><span class=o>:</span> <span class=nf>#aaa</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+<span class=o>//</span><span class=err>$</span><span class=nt>black</span><span class=o>:</span> <span class=nf>#111</span> <span class=o>!</span><span class=nt>default</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Flat</span> <span class=nt>UI</span> <span class=nt>Colors</span> <span class=nt>-</span> <span class=nt>http</span><span class=o>://</span><span class=nt>flatuicolors</span><span class=nc>.com</span><span class=o>/</span>
+<span class=o>//</span> <span class=nt>--------------------------</span>
+
+<span class=o>//</span> <span class=nt>Greenish</span><span class=o>/</span><span class=nt>Teal</span>
+<span class=err>$</span><span class=nt>green-sea</span><span class=o>:</span> <span class=nf>#16a085</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>turquoise</span><span class=o>:</span> <span class=nf>#1abc9c</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Green</span>
+<span class=err>$</span><span class=nt>emerald</span><span class=o>:</span> <span class=nf>#2ecc71</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>nephritis</span><span class=o>:</span> <span class=nf>#27ae60</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Blue</span> <span class=nt>-</span> <span class=nt>Bright</span>
+<span class=err>$</span><span class=nt>peter-river</span><span class=o>:</span> <span class=nf>#3498db</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>belize-hole</span><span class=o>:</span> <span class=nf>#2980b9</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Blue</span> <span class=nt>-</span> <span class=nt>Dark</span>
+<span class=err>$</span><span class=nt>wet-asphalt</span><span class=o>:</span> <span class=nf>#34495e</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>midnight-blue</span><span class=o>:</span> <span class=nf>#2c3e50</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Purple</span>
+<span class=err>$</span><span class=nt>amethyst</span><span class=o>:</span> <span class=nf>#9b59b6</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>wisteria</span><span class=o>:</span> <span class=nf>#8e44ad</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Red</span>
+<span class=err>$</span><span class=nt>alizariin</span><span class=o>:</span> <span class=nf>#e74c3c</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>pomegranate</span><span class=o>:</span> <span class=nf>#c0392b</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Orange</span>
+<span class=err>$</span><span class=nt>sunflower</span><span class=o>:</span> <span class=nf>#f1c40f</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Lighter</span>
+<span class=err>$</span><span class=nt>orange</span><span class=o>:</span> <span class=nf>#f39c12</span><span class=o>;</span> <span class=o>//</span> <span class=nt>Darker</span>
+
+<span class=o>//</span> <span class=nt>Grays</span>
+<span class=err>$</span><span class=nt>clouds</span><span class=o>:</span> <span class=nf>#ecf0f1</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>silver</span><span class=o>:</span> <span class=nf>#bdc3c7</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>concrete</span><span class=o>:</span> <span class=nf>#95a5a6</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>asbestos</span><span class=o>:</span> <span class=nf>#7f8c8d</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>gray-slate</span><span class=o>:</span> <span class=nf>#3e454f</span><span class=o>;</span>
+
+<span class=o>//</span> <span class=nt>Base16</span> <span class=nt>-</span> <span class=nt>Ocean</span> <span class=nt>-</span> <span class=nt>http</span><span class=o>://</span><span class=nt>chriskempson</span><span class=nc>.github.io</span><span class=o>/</span><span class=nt>base16</span><span class=o>/</span><span class=nf>#ocean</span>
+<span class=o>//</span> <span class=nt>--------------------------</span>
+
+<span class=err>$</span><span class=nt>base16-00</span><span class=o>:</span> <span class=nf>#2B303B</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-01</span><span class=o>:</span> <span class=nf>#343D46</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-02</span><span class=o>:</span> <span class=nf>#4F5B66</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-03</span><span class=o>:</span> <span class=nf>#65737E</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-04</span><span class=o>:</span> <span class=nf>#A7ADBA</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-05</span><span class=o>:</span> <span class=nf>#C0C5CE</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-06</span><span class=o>:</span> <span class=nf>#DFE1E8</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-07</span><span class=o>:</span> <span class=nf>#EFF1F5</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-08</span><span class=o>:</span> <span class=nf>#BF616A</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-09</span><span class=o>:</span> <span class=nf>#D08770</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0A</span><span class=o>:</span> <span class=nf>#EBCB8B</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0B</span><span class=o>:</span> <span class=nf>#A3BE8C</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0C</span><span class=o>:</span> <span class=nf>#96B5B4</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0D</span><span class=o>:</span> <span class=nf>#8FA1B3</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0E</span><span class=o>:</span> <span class=nf>#B48EAD</span><span class=o>;</span>
+<span class=err>$</span><span class=nt>base16-0F</span><span class=o>:</span> <span class=nf>#AB7967</span><span class=o>;</span>
+</code></pre></div><p>I run it through tinge:</p><p><code>tinge -f ase _colors.scss -o colors.ase</code></p><p>and I then get my outputted .ase file that I can open in Adobe with all my colors:</p><p><a href=/img/post-assets/2014-01-19/aaf4.ase.png title="Color Palette" class=colorbox><img src=/img/post-assets/2014-01-19/aaf4.ase.png></a></p><p><img alt=boom src=/img/emoji/13dc.boom.png class=emoji> All my comps will be using the same colors as my code and I don&#39;t have to manually sync things... just regenerate, load and go.</p><p>Hovering over the colors will also give you the variable name so even makes it quicker to cross reference when coding <img alt=heart src=/img/emoji/af6a.heart.png class=emoji></p><footer class=post-footer><dl><dt>Tagged</dt><dd><ul class=tag-list><li><a href=/tag/rubyonrails><span class="ss-icon ss-air">tag</span> rubyonrails</a></li><li><a href=/tag/bruce><span class="ss-icon ss-air">tag</span> bruce</a></li><li><a href=/tag/gem><span class="ss-icon ss-air">tag</span> gem</a></li></ul></dd><dt>Date Posted</dt><dd><time datetime=2014-01-19T23:35:08-05:00><span class="ss-icon ss-air">calendar</span> 19 Jan 2014</time></dd><dt>Trackback URL</dt><dd class=trackback-url><span class="ss-icon ss-air">bookmark</span><a href=http://lynn.io/2014/01/19/colors-matter/>http://lynn.io/2014/01/19/colors-matter/</a></dd></dl></footer></article></main><script src=//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js></script><script>window.jQuery || document.write('<script src="/_bower_components/jquery/jquery.min.js"><\/script>')</script><script src=/js/4a8b.script.js></script><script type=text/javascript>var _gauges=_gauges||[];(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.id="gauges-tracker";e.setAttribute("data-site-id","5161d8fbf5a1f51ab200007c");e.src="//secure.gaug.es/track.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()</script></body></html>
