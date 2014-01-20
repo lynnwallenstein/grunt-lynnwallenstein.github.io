@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2014-01-19T23:59:19-05:00</updated>
+ <updated>2014-01-20T00:21:48-05:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
@@ -33,11 +33,11 @@
 
 &lt;p&gt;Tinge is a awesome gem created by my amazing friend &lt;a href=&quot;http://bruce.io/&quot;&gt;Bruce Williams&lt;/a&gt; who after being sick and tired or my whining and complaining spent like 10 seconds (cause he is a genius) and created me this fabulous little tool that basically input my &lt;code&gt;_color.scss&lt;/code&gt; SASS partials that I use in my projects and create for me an &lt;a href=&quot;http://www.colourlovers.com/web/blog/2007/11/08/color-palettes-in-adobe-swatch-exchange-ase&quot;&gt;Adobe Swatch Exchange&lt;/a&gt; file that I could import into photoshop/illustrator with all my colors.&lt;/p&gt;
 
-&lt;p&gt;The key thing here is that Tinge computes my sass color variables using sass color functions like lighten, darken, desaturate, etc, so I get the full color palette. Tinge also can expert to JSON or YAML format instead of ASE.&lt;/p&gt;
+&lt;p&gt;The key thing here is that Tinge computes my sass color variables using sass color functions like lighten, darken, desaturate, etc, so I get the full color palette. Tinge also can export to JSON or YAML format instead of ASE.&lt;/p&gt;
 
 &lt;h2&gt;How Does It Work&lt;/h2&gt;
 
-&lt;p&gt;Its pretty simple.  Lets take my example color file for this site:&lt;/p&gt;
+&lt;p&gt;It&amp;#39;s pretty simple.  Let&amp;#39;s take my example color file for this site:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--------------------------&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;Colors&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--------------------------&lt;/span&gt;
