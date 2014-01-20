@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2014-01-19T23:50:44-05:00</updated>
+ <updated>2014-01-19T23:59:19-05:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;Here enters &lt;a href=&quot;https://github.com/bruce/tinge&quot;&gt;Tinge&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Tinge is a awesome gem created by my amazing friend &lt;a href=&quot;http://bruce.io/&quot;&gt;Bruce Williams&lt;/a&gt; who after being sick and tired or my whining and complaining spent like 10 seconds (cause he is a genious) and created me this fabulous little tool that basically input my &lt;code&gt;_color.scss&lt;/code&gt; SASS partials that I use in my projects and create for me an &lt;a href=&quot;http://www.colourlovers.com/web/blog/2007/11/08/color-palettes-in-adobe-swatch-exchange-ase&quot;&gt;Adobe Swatch Exchange&lt;/a&gt; file that I could import into photoshop/illustrator with all my colors.&lt;/p&gt;
+&lt;p&gt;Tinge is a awesome gem created by my amazing friend &lt;a href=&quot;http://bruce.io/&quot;&gt;Bruce Williams&lt;/a&gt; who after being sick and tired or my whining and complaining spent like 10 seconds (cause he is a genius) and created me this fabulous little tool that basically input my &lt;code&gt;_color.scss&lt;/code&gt; SASS partials that I use in my projects and create for me an &lt;a href=&quot;http://www.colourlovers.com/web/blog/2007/11/08/color-palettes-in-adobe-swatch-exchange-ase&quot;&gt;Adobe Swatch Exchange&lt;/a&gt; file that I could import into photoshop/illustrator with all my colors.&lt;/p&gt;
 
 &lt;p&gt;The key thing here is that Tinge computes my sass color variables using sass color functions like lighten, darken, desaturate, etc, so I get the full color palette. Tinge also can expert to JSON or YAML format instead of ASE.&lt;/p&gt;
 
