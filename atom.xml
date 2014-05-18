@@ -4,7 +4,7 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2014-02-23T17:25:03-05:00</updated>
+ <updated>2014-05-17T19:53:26-07:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
@@ -15,10 +15,10 @@
    <entry>
      <title>Pure CSS Dynamic Sized Centered Modals</title>
      <link href="/2014/02/22/modalin/"/>
-     <updated>2014-02-22T21:13:43Z</updated>
+     <updated>2014-02-22T13:13:43-08:00</updated>
      <id>/2014/02/22/modalin</id>
      <content type="html">&lt;p&gt;I recently came across this article &lt;a href=&quot;http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/&quot;&gt;&amp;quot;Vertical align anything with just 3 lines of CSS&amp;quot;&lt;/a&gt;, describing a technique for vertical alignment using the CSS property &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/transform&quot;&gt;&lt;code&gt;transform&lt;/code&gt;&lt;/a&gt; (&lt;a href=&quot;http://caniuse.com/#feat=transforms2d&quot;&gt;caniuse&lt;/a&gt;):&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translateY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -31,7 +31,7 @@
 &lt;h3&gt;Fixed Size / Absolute Positioned for Centering&lt;/h3&gt;
 
 &lt;p&gt;I could used fixed size modals absolute positioning:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-450px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-450px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -48,7 +48,7 @@
 &lt;h3&gt;Dynamically Sized / Fixed Position from Top&lt;/h3&gt;
 
 &lt;p&gt;I would create a dynamically sized modal and then just ensure there were a certain amount of spacing around the modal:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -78,7 +78,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;So, first the positioning:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fixed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -88,7 +88,7 @@
 &lt;p&gt;Check. Now our modal will position to the center of the page and then dynamically &amp;#39;negative margin&amp;#39; the top and left 1/2 the size of the rendered window. This means no matter how large the window it, it will be centered.&lt;/p&gt;
 
 &lt;p&gt;Second we get for free. Since we didn&amp;#39;t give the modal a height or width it will :sparkles: automagically :sparkles: be sized by the browser. We do however want to make sure that that even if the content is huge it doesn&amp;#39;t scroll off the screen. so we we add in a little &lt;code&gt;max-height&lt;/code&gt; action. Using calc we don&amp;#39;t have to worry about % that could potentially get strange on different resolutions.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.modal&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;max-height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fixed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -115,7 +115,7 @@
    <entry>
      <title>Keeping Your SCSS Vars and Adobe Palletes in Sync with Tinge</title>
      <link href="/2014/01/19/colors-matter/"/>
-     <updated>2014-01-19T23:35:08Z</updated>
+     <updated>2014-01-19T15:35:08-08:00</updated>
      <id>/2014/01/19/colors-matter</id>
      <content type="html">&lt;p&gt;I am a fan of designing in code. I like the ability to really &amp;quot;kick the tires&amp;quot; of a design and feel how it will work from an interaction level.&lt;/p&gt;
 
@@ -138,7 +138,7 @@
 &lt;h2&gt;How Does It Work&lt;/h2&gt;
 
 &lt;p&gt;It&amp;#39;s pretty simple.  Let&amp;#39;s take my example color file for this site:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--------------------------&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--------------------------&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;Colors&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--------------------------&lt;/span&gt;
 
@@ -270,9 +270,9 @@
  
    <entry>
      <title>Auto Commenting of Partials</title>
-     <link href="/2014/01/12/commenting-partials/"/>
-     <updated>2014-01-12T04:16:07Z</updated>
-     <id>/2014/01/12/commenting-partials</id>
+     <link href="/2014/01/11/commenting-partials/"/>
+     <updated>2014-01-11T20:16:07-08:00</updated>
+     <id>/2014/01/11/commenting-partials</id>
      <content type="html">&lt;p&gt;When working in a rails app, sometimes it is really easy to loose yourself in a complex path of nested partials. Not knowing where code is coming from or where the proper place is to edit the source can be extremly frustrating and after my consistent bitching, my friend &lt;a href=&quot;http://twitter.com/comaddox&quot;&gt;Chris Maddox&lt;/a&gt; whipped up this &lt;a href=&quot;http://rubygems.org/gems/partial_logging&quot;&gt;really helpful gem&lt;/a&gt; that adds inline comments in your HTML showing you when partials start and end.&lt;/p&gt;
 
 &lt;p&gt;Install the gem as normal: &lt;/p&gt;
@@ -293,9 +293,9 @@
  
    <entry>
      <title>jQuery GitHub Badge</title>
-     <link href="/2013/12/28/github-badge/"/>
-     <updated>2013-12-28T02:07:44Z</updated>
-     <id>/2013/12/28/github-badge</id>
+     <link href="/2013/12/27/github-badge/"/>
+     <updated>2013-12-27T18:07:44-08:00</updated>
+     <id>/2013/12/27/github-badge</id>
      <content type="html">&lt;p&gt;Just wanted to quickly post that I FINALLY got my jQuery GitHub badge updated and finally set up its own project page on GitHub. Demo, code and documentation can be found &lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://lynn.io/jQuery-GitHub-Badge/&quot;&gt;&lt;img src=&quot;/img/post-assets/2013-12-28/jQuery_GitHub_Badge.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -307,7 +307,7 @@
    <entry>
      <title>Nested Layouts with Less Divs</title>
      <link href="/2013/12/22/nested-layouts-with-less-divs/"/>
-     <updated>2013-12-22T20:20:20Z</updated>
+     <updated>2013-12-22T12:20:20-08:00</updated>
      <id>/2013/12/22/nested-layouts-with-less-divs</id>
      <content type="html">&lt;p&gt;First to start out, this method relies heavily on the use of the CSS &lt;a href=&quot;http://caniuse.com/calc&quot;&gt;Calc&lt;/a&gt; as a unit value. This is fairly well supported on most modern browsers, but if you need to support old versions of IE (pre 9), this probably won&amp;#39;t work for you.&lt;/p&gt;
 
@@ -372,7 +372,7 @@
 &lt;p&gt;So how can calc help us from &lt;a href=&quot;http://en.wiktionary.org/wiki/divitis&quot;&gt;Divitis&lt;/a&gt;? Easily!&lt;/p&gt;
 
 &lt;p&gt;So lets start by simplifying our markup a little bit:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;page-header&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;banner&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;page-header&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;banner&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Here Is Our Header!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- /header#page-header --&amp;gt;&lt;/span&gt;
 
@@ -395,14 +395,14 @@
 &lt;p&gt;Each margin: &lt;code&gt;(100% - 1280px) / 2&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;We could do that with calc like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now remember, calc is pretty new, so probably to be safe you might want to add the browser vendor prefixes (or use something like a preprocessor such as &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; with mixins to take care of it :&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;webkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1280px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -429,7 +429,7 @@
    <entry>
      <title>Looking Back on 2013</title>
      <link href="/2013/12/13/year-in-review/"/>
-     <updated>2013-12-13T14:40:06Z</updated>
+     <updated>2013-12-13T06:40:06-08:00</updated>
      <id>/2013/12/13/year-in-review</id>
      <content type="html">&lt;p&gt;2013 was a pretty amazing year. It started out with me celebrating one year at &lt;a href=&quot;http://livingsocial.com/&quot;&gt;LivingSocial&lt;/a&gt; in  January. Working at LivingSocial was an amazing experience for me both personally and professionally. I met people there that I have learned so much from and some I have been fortunate enough to call my closest friends.&lt;/p&gt;
 
@@ -458,7 +458,7 @@
    <entry>
      <title>And We're Back...</title>
      <link href="/2013/09/28/most-wonderful-time-of-the-year/"/>
-     <updated>2013-09-28T14:40:06Z</updated>
+     <updated>2013-09-28T07:40:06-07:00</updated>
      <id>/2013/09/28/most-wonderful-time-of-the-year</id>
      <content type="html">&lt;p&gt;So, this is my yearly refresh of my website and the promise that I will blog more. I really do have good intentions, I just never feel qualified to write about
 anything.&lt;/p&gt;
