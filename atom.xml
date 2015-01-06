@@ -4,13 +4,26 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2015-01-03T19:32:39-08:00</updated>
+ <updated>2015-01-06T12:45:18-08:00</updated>
  <id></id>
  <author>
    <name>Lynn Wallenstein</name>
    <email>lynn@lynn.io</email>
  </author>
 
+ 
+   <entry>
+     <title>Hello 2015</title>
+     <link href="/2015/01/06/welcome-2015/"/>
+     <updated>2015-01-06T04:43:02-08:00</updated>
+     <id>/2015/01/06/welcome-2015</id>
+     <content type="html">&lt;p&gt;Another year, another commitment to blogging more. I made it to February last year, maybe this year I will make it to March?&lt;/p&gt;
+
+&lt;p&gt;I am going to try not to be so hard on myself about posting as it just leads me to feel of it more like a chore then fun.&lt;/p&gt;
+
+&lt;p&gt;So, for now, Happy 2015 to you all!&lt;/p&gt;
+</content>
+   </entry>
  
    <entry>
      <title>Pure CSS Dynamic Sized Centered Modals</title>
